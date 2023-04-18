@@ -14,3 +14,23 @@ for (var i = 0; i < 11; i++) {
 }
 
 console.log(result);
+
+//solution 2
+
+// Define the size of the multiplication table
+const size = 10;
+// Create an empty array to hold the table
+const table = [];
+// Generate the table
+for (let i = 1; i <= size; i++) {
+	// Create an empty array to hold the current row
+	const row = [];
+	for (let j = 1; j <= size; j++) {
+		// Multiply the current row and column numbers and push the result to the row array
+		row.push(i * j);
+	}
+	// Push the row array to the table array
+	table.push(row);
+}
+// Print the table
+console.table(table);

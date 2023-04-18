@@ -36,8 +36,9 @@ var firstUniqChar2 = function (s) {
 
 	for (var i = 0; i < s.length; i++) {
 		if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) {
-			return i;
+			return s.charAt(i);
 		}
 	}
 	return -1;
 };
+console.log(firstUniqChar2("racecar"));
