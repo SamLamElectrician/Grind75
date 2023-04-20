@@ -3,8 +3,10 @@
 //Return the head of the merged linked list.
 
 var mergeTwoLists = function (list1, list2) {
+	//compares for edge cases in case of null list
 	if (!list1) return list2;
 	else if (!list2) return list1;
+	//compares values and puts the next value in it
 	else if (list1.val <= list2.val) {
 		list1.next = mergeTwoLists(list1.next, list2);
 		return list1;
@@ -15,6 +17,7 @@ var mergeTwoLists = function (list1, list2) {
 };
 
 var mergeTwoLists2 = function (list1, list2) {
+	//edge cases
 	if (list1 === null && list2 === null) {
 		return list1;
 	}
@@ -24,8 +27,11 @@ var mergeTwoLists2 = function (list1, list2) {
 	if (list2 === null) {
 		return list1;
 	}
+	//new node list
 	let dummyPointer = new ListNode(0);
+	//pointer
 	let currentPointer = dummyPointer;
+	//adds to the new node list if the value is higher or equal to previous num
 	while (list1 && list2) {
 		if (list1.val < list2.val) {
 			currentPointer.next = list1;
